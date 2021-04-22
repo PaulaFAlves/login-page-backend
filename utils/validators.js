@@ -38,7 +38,7 @@ module.exports.validateLoginInput = (userName, password) => {
 		errors.userName = 'UserName não pode ser nulo'
 	}
 	if (password.trim() === '') {
-		errors.password = 'Senha não pode ser nulo'
+		errors.password = 'Senha não pode ser nula'
 	}
 	return {
 		errors,
