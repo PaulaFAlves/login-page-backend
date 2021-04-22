@@ -36,15 +36,15 @@ module.exports = {
 			const user = await User.findOne({ userName })
 
 			if (!user) {
-				errors.general = 'user not found'
-				throw new UserInputError('user not found', { errors })
+				errors.general = 'Usuário não cadastrado'
+				throw new UserInputError('Usuário não cadastrado', { errors })
 			}
 
 			const match = await compare(password, user.password)
 
 			if (!match) {
-				errors.general = 'wrong credentials'
-				throw new UserInputError('wrong credentials', { errors })
+				errors.general = 'Senha incorreta'
+				throw new UserInputError('Senha incorreta', { errors })
 			}
 
 			const token = generateToken(user)
@@ -68,9 +68,9 @@ module.exports = {
 			const user = await User.findOne({ userName })
 
 			if (user) {
-				throw new UserInputError('userName is taken', {
+				throw new UserInputError('Username já cadastrado', {
 					errors: {
-							userName: 'userName is taken'
+							userName: 'Username já cadastrado'
 					}
 				})
 			}

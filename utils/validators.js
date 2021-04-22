@@ -7,22 +7,22 @@ module.exports.validateRegisterInput = (
 	const errors = {}
 
 	if (userName.trim() === '') {
-		errors.userName = 'userName must not be empty'
+		errors.userName = 'UserName não pode ser nulo'
 	}
 
 	if (email.trim() === '') {
-		errors.email = 'email must not be emptu'
+		errors.email = 'Email não pode ser nulo'
 	} else {
 		const regEx = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
 		if (!email.match(regEx)) {
-			errors.email = 'email is not valid'
+			errors.email = 'Email inválido'
 		}
 	}
 
 	if (password === '') {
-		errors.password = 'password must not be empty'
+		errors.password = 'Senha não pode ser nula'
 	} else if (password !== confirmPassword) {
-		errors.confirmPassword = 'confirm password must be the same '
+		errors.confirmPassword = 'Senha não confere'
 	}
 
 	return {
@@ -35,10 +35,10 @@ module.exports.validateLoginInput = (userName, password) => {
   const errors = {}
 
 	if (userName.trim() === '') {
-		errors.userName = 'userName must not be empty'
+		errors.userName = 'UserName não pode ser nulo'
 	}
 	if (password.trim() === '') {
-		errors.password = 'password must not be empty'
+		errors.password = 'Senha não pode ser nulo'
 	}
 	return {
 		errors,
