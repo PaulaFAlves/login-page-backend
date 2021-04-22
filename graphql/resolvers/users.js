@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const { UserInputError } = require('apollo-server')
 
 const { validateRegisterInput, validateLoginInput } = require('../../utils/validators')
-const { SECRET_KEY } = require('../../config.js')
+const { SECRET_KEY } = require('../../config')
 
 function generateToken(user){
 	return jwt.sign({
